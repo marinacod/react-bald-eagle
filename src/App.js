@@ -48,7 +48,7 @@ function App() {
           path="/"
           element={
             <div>
-              <h1> Todo List</h1>
+              <h1> Weekly planner</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {isLoading ? (
                 <p>Loading...</p>
