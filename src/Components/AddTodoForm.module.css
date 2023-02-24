@@ -1,15 +1,8 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #a9abb4;
-}
-
 .loginForm {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -18,10 +11,12 @@ h1 {
   font: italic small-caps bold 56px/2 cursive;
   text-align: center;
 }
-
+h2 {
+  text-align: center;
+}
 .Btn {
   padding: 10px 20px;
-  background-color: dodgerblue;
+  background-color: #1c4685;
   border: 1px solid #ddd;
   color: white;
   cursor: pointer;
@@ -29,25 +24,22 @@ h1 {
     -8px -8px 12px 0 rgba(0, 0, 0, 0.25) inset;
   border-radius: 10px;
   font-style: italic;
+  height: 40px;
+  width: 100px;
 }
 
 label {
-  margin: 5px 20px 5px 0;
-  color: blue;
+  margin: 5px 35px 5px 25px;
+  color: white;
   font-style: italic;
+  font-weight: bold;
 }
 
 input {
   vertical-align: middle;
-  margin: 5px 50px 5px 0;
+  margin: 5px 20px 5px 0;
   padding: 10px;
-  background-color: rgb(241, 236, 236);
-  border: 1px solid #ddd;
+  border: 1px solid #3251db;
   border-radius: 10px;
-}
-span {
-  margin: 0 20px;
-}
-ul {
-  list-style-type: square;
+  width: 350px;
 }

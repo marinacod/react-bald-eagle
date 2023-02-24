@@ -1,7 +1,7 @@
 .ListItem {
   padding: 15px 10px;
   margin-left: 10px;
-  margin-right: 30px;
+  margin-right: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
@@ -10,20 +10,53 @@
   align-items: center;
   font-family: 'Ultra', Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
-  background: #8395ec;
+  background: #7bb1f0;
 }
-.RemoveButton {
-  align-items: center;
-  background-color: #afd275;
-  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  display: flex;
-  height: 30px;
-  justify-content: center;
-  /*margin-right: 4rem;*/
-  width: 70px;
+
+ul {
+  width: 400px;
   margin-left: auto;
-  font-style: italic;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.completedTodo {
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  color: rgb(136, 134, 134);
+}
+
+.ListItem.completedTodo .checkIcon,
+.ListItem.completedTodo .deleteIcon {
+  color: rgb(214, 210, 210);
+}
+
+.checkIcon,
+.deleteIcon {
   cursor: pointer;
+  color: lightgrey;
+  padding: 0 7px;
+  font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+
+.checkIcon:hover,
+.deleteIcon:hover {
+  cursor: pointer;
+  transform: scale(1.8);
+}
+
+.checkIcon:hover {
+  color: green;
+}
+
+.deleteIcon:hover {
+  color: red;
+}
+.deleteIcon {
+  margin-left: auto;
 }
