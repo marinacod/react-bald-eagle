@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Footer.module.css';
 import { BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
-//import { BsFillFileEarmarkPersonFill } from 'react-icons/bs';
 
 function Footer() {
   const today = new Date();

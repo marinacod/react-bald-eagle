@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Gill Sans', sans-serif;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  background-color: rgb(220, 224, 228);
+}
+
+.container {
+  display: flex;
+  height: 85vh;
+  width: 100vh;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.todoContainer1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 10px 20px;
+
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  background: url('../src/pictures/table.jpg');
+}
+
+.todoContainer1 h1,
+h2 {
+  color: white;
+}
+.todoContainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 10px 20px;
+
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  background: url('../src/pictures/food.jpg');
+}
+.todoContainer2 h1,
+h2 {
+  color: rgb(10, 18, 131);
+}
+
+.todoContainer3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 10px 20px;
+
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  background: url('../src/pictures/sky.jpg');
+}
+
+h2 {
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    min-height: 100vh;
+  }
+  .todoContainer1 {
+    min-height: 100vh;
+  }
+  .todoContainer2 {
+    min-height: 100vh;
+  }
+
+  .todoContainer3 {
+    min-height: 100vh;
+  }
+}
