@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import TodoList from './TodoList';
-import AddTodoForm from './AddTodoForm';
+import TodoList from './Components/TodoList';
+import AddTodoForm from './Components/AddTodoForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './Components/Footer';
 
 function App() {
   const [todoList, setTodoList] = React.useState([]);
@@ -31,13 +32,58 @@ function App() {
     }
   }, [todoList, isLoading]);
 
-  const addTodo = (newTodo) => {
+  /*const addTodo = (newTodo) => {
     setTodoList([...todoList, newTodo]);
+  }; */
+
+  const addTodo = (newTodo) => {
+    fetch(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          'Content-type': 'application/json',
+        },
+        body: `{"records": [{"fields": {"Title":"${newTodo.title}"}}]}`,
+        //JSON.stringify(newTodo),
+      }
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setTodoList([...todoList, ...result.records]);
+      })
+      .catch((error) => {
+        console.error('Error has occured:', error);
+        return error;
+      });
   };
 
-  const removeTodo = (item) => {
-    const modifiedArray = todoList.filter((todo) => item.id !== todo.id);
-    setTodoList(modifiedArray);
+  //const removeTodo = (item) => {
+  // const modifiedArray = todoList.filter((todo) => item.id !== todo.id);
+  // setTodoList(modifiedArray);
+  //};
+
+  const removeTodo = (id) => {
+    fetch(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          'Content-type': 'application/json',
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then(() => {
+        const newTodoList = todoList.filter((listItem) => id !== listItem.id);
+        setTodoList(newTodoList);
+      })
+      .catch((error) => {
+        console.error('Error has occured:', error);
+        return error;
+      });
   };
 
   return (
@@ -55,6 +101,7 @@ function App() {
               ) : (
                 <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
               )}
+              <Footer />
             </div>
           }
         ></Route>
