@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import TodoContainer from './Components/TodoContainer';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 const App = () => {
   return (
@@ -11,48 +12,39 @@ const App = () => {
       <div className={styles.container}>
         <NavBar />
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route
-            index
             exact
             path="/weekly"
             element={
-              <>
-                <TodoContainer
-                  tableName="Weekly planner"
-                  myClass={styles.todoContainer1}
-                />
-              </>
+              <TodoContainer
+                tableName="Weekly planner"
+                myClass={styles.todoContainer1}
+              />
             }
           />
           <Route
-            index
             exact
             path="/grocery"
             element={
-              <>
-                <TodoContainer
-                  tableName="Grocery List"
-                  myClass={styles.todoContainer2}
-                />
-              </>
+              <TodoContainer
+                tableName="Grocery List"
+                myClass={styles.todoContainer2}
+              />
             }
           />
           <Route
-            index
             exact
             path="/bucket"
             element={
-              <>
-                <TodoContainer
-                  tableName="Bucket List"
-                  myClass={styles.todoContainer3}
-                />
-              </>
+              <TodoContainer
+                tableName="Bucket List"
+                myClass={styles.todoContainer3}
+              />
             }
           />
         </Routes>
       </div>
-
       <Footer />
     </Router>
   );

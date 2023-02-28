@@ -14,7 +14,6 @@ function Footer() {
       <a href="https://codethedream.org/" target="_blank" rel="noreferrer">
         CTD project
       </a>
-
       <a href="https://github.com/marinacod" target="_blank" rel="noreferrer">
         <FaGithubSquare />
       </a>
