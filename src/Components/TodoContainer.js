@@ -111,13 +111,6 @@ const TodoContainer = ({ tableName, myClass }) => {
       });
   };
 
-  //const deleteCompletedTodos = () => {
-  //  setTodoList(todoList.filter((todo) => !todo.isCompleted));
-  // };
-  // const resetTodosHandler = () => {
-  //  setTodoList([]);
-  // };
-
   const completedTodosCount = todoList.filter(
     (todo) => todo.isCompleted
   ).length;
